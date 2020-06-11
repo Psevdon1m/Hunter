@@ -1,0 +1,46 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+.game-section {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.game-section canvas {
+	background-color: #f1f1f2 !important;
+}
+.hidden {
+	display: none !important;
+}
+h1 {
+	color: black;
+	font-size: 36px;
+}
+
+.winner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.winner button {
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 7px 20px;
+	background-color: #1995ad;
+}
+
+.winner button:hover {
+	background-color: #a1deeb;
+}
