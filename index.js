@@ -1,7 +1,7 @@
 let complexity = 'low';
 
 const generateNewLevel = (hor = 3, ver = 3) => {
-	const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
+	const { Engine, Render, Runner, World, Bodies, Body, Events, MouseConstraint, Mouse } = Matter;
 
 	let cellsHorizontal = hor;
 	let cellsVertical = ver;
@@ -94,7 +94,14 @@ const generateNewLevel = (hor = 3, ver = 3) => {
 
 	Render.run(render);
 	Runner.run(Runner.create(), engine);
-
+	if (width <= 1000) {
+		World.add(
+			world,
+			MouseConstraint.create(engine, {
+				mouse: Mouse.create(render.canvas)
+			})
+		);
+	}
 	//Walls
 
 	const walls = [
